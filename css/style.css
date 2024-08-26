@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: "Filson Pro Regular";
-  src: url("/fonts/628d8334f66234c9480d472f2d7d911a.woff") format('woff');
+  src: url("../fonts/628d8334f66234c9480d472f2d7d911a.woff") format('woff');
 	/* font-weight: 400; */
 }
 
@@ -2639,7 +2639,7 @@ span.sub-title{
     position: relative;
     display: block;
     width: 100%;
-		background: url('/img/footer-bg.png');
+		background: url('../img/footer-bg.png');
 }
 .background-img-2:before{
     position: absolute;
