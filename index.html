@@ -11,16 +11,17 @@
 	<meta name="author" content="Kroni Technologies">
 
 	<!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
-	<meta property="og:site_name" content=""> <!-- website name -->
-	<meta property="og:site" content=""> <!-- website link -->
-	<meta property="og:title" content=""> <!-- title shown in the actual shared post -->
-	<meta property="og:description" content=""> <!-- description shown in the actual shared post -->
-	<meta property="og:image" content=""> <!-- image link, make sure it's jpg -->
-	<meta property="og:url" content=""> <!-- where do you want your post to link to -->
+	<meta property="og:site_name" content="Kroni Tech"> <!-- website name -->
+	<meta property="og:site" content="https://kroni.io/"> <!-- website link -->
+	<meta property="og:title" content="Kroni Tech | Logística 3PL"> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="¡Despachamos tus pedidos en menos de 24 horas a todo el mundo!"> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="img/kroni-versiones-confondo-04.jpg"> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="https://kroni.io/"> <!-- where do you want your post to link to -->
 	<meta property="og:type" content="article">
 
 	<title>Kroni Tech | Logística 3PL</title>
 
+	<link rel="icon" type="image/x-icon" href="img/Kroni_Favicon.png">
 	<!-- <link href="https://fonts.cdnfonts.com/s/57464/FilsonProRegular.woff" rel="stylesheet"> -->
 
 	<!--google fonts-->
@@ -344,24 +345,9 @@
 						<div class="col-md-5">
 							<div class="owl-carousel owl-theme client-testimonial arrow-indicator owl-loaded owl-drag">
 								<div class="owl-stage-outer">
-									<div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all; width: 2788px;">
-										<div class="owl-item active" style="width: 527.5px; margin-right: 30px;">
-											<div class="item">
-												<div class="testimonial-quote-wrap">
-													<div class="media author-info mb-3">
-														<div class="media-body"><img src="img/marisa-por-ti-una-delicia.png"
-																alt="Pastelerias Marisa" class="logo-testimonios img-fluid"></div>
-													</div>
-													<div class="client-say">
-														<p> <img src="img/quote.png" alt="quote" class="img-fluid">Kroni ha transformado
-															nuestra cadena de suministro con su rapidez y confiabilidad. Siempre podemos contar con
-															ellos para entregar a tiempo.</p>
-													</div>
-													<div><span class="mb-0 bold-italic">- Pastelerias Marisa</span></div>
-												</div>
-											</div>
-										</div>
-										<div class="owl-item" style="width: 527.5px; margin-right: 30px;">
+									<div class="owl-stage">
+
+										<div class="owl-item" >
 											<div class="item">
 												<div class="testimonial-quote-wrap">
 													<div class="media author-info mb-3">
@@ -377,7 +363,23 @@
 												</div>
 											</div>
 										</div>
-										<div class="owl-item" style="width: 527.5px; margin-right: 30px;">
+										<div class="owl-item" >
+											<div class="item">
+												<div class="testimonial-quote-wrap">
+													<div class="media author-info mb-3">
+														<div class="media-body"><img src="img/marisa-por-ti-una-delicia.png"
+																alt="Pastelerias Marisa" class="logo-testimonios img-fluid"></div>
+													</div>
+													<div class="client-say">
+														<p> <img src="img/quote.png" alt="quote" class="img-fluid">Kroni ha transformado
+															nuestra cadena de suministro con su rapidez y confiabilidad. Siempre podemos contar con
+															ellos para entregar a tiempo.</p>
+													</div>
+													<div><span class="mb-0 bold-italic">- Pastelerias Marisa</span></div>
+												</div>
+											</div>
+										</div>
+										<div class="owl-item" >
 											<div class="item">
 												<div class="testimonial-quote-wrap">
 													<div class="media author-info mb-3">
@@ -393,7 +395,7 @@
 												</div>
 											</div>
 										</div>
-										<div class="owl-item" style="width: 527.5px; margin-right: 30px;">
+										<div class="owl-item" >
 											<div class="item">
 												<div class="testimonial-quote-wrap">
 													<div class="media author-info mb-3">
@@ -409,7 +411,7 @@
 												</div>
 											</div>
 										</div>
-										<div class="owl-item" style="width: 527.5px; margin-right: 30px;">
+										<div class="owl-item" >
 											<div class="item">
 												<div class="testimonial-quote-wrap">
 													<div class="media author-info mb-3">
@@ -460,7 +462,7 @@
 							</div>
 						</div>
 						<div class="col-md-7">
-							<form action="#" method="POST" id="contactForm" class="contact-us-form" novalidate="">
+							<form action="submitForm" method="POST" id="contactForm" class="contact-us-form" novalidate="">
 								<div class="row">
 									<div class="col-sm-6 col-12">
 										<div class="form-group"><input type="text" class="form-control mb-3" name="name" id="name"
@@ -474,17 +476,17 @@
 								<div class="row">
 									<div class="col-sm-6 col-12">
 										<div class="form-group"><input type="text" name="phone" class="form-control mb-3" id="phone"
-												placeholder="Teléfono"></div>
+												placeholder="Teléfono" required=""></div>
 									</div>
 									<div class="col-sm-6 col-12">
 										<div class="form-group"><input type="text" name="company" size="40" class="form-control mb-3"
-												id="company" placeholder="Empresa"></div>
+												id="company" placeholder="Empresa" required=""></div>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-12">
 										<div class="form-group"><textarea name="message" id="message" class="form-control mb-3 h-100"
-												rows="7" cols="25" placeholder="Mensaje"></textarea></div>
+												rows="7" cols="25" placeholder="Mensaje" required=""></textarea></div>
 									</div>
 								</div>
 								<div class="row">

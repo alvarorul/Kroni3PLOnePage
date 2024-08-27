@@ -352,10 +352,10 @@ jQuery(function ($) {
 
         $.ajax({
             type: "POST",
-            url: "libs/contact-form-process.php",
+            url: "https://kroni3pl--development.gadget.app/sendMessage",
             data: "name=" + name + "&email=" + email + "&phone=" + phone + "&company=" + company + "&message=" + message,
-            success : function(text){
-                if (text == "success"){
+            success : function(response){
+                if (response.ok ){
                     formSuccess();
                 } else {
                     submitMSG(false, '.contact-us');
@@ -372,11 +372,19 @@ jQuery(function ($) {
     function submitMSG(valid, parentSelector){
         if(valid){
             $(parentSelector + " .message-box").removeClass('d-none').addClass('d-block ');
-            $(parentSelector + " .message-box div").removeClass('alert-danger').addClass('alert-success').text('Form submitted successfully');
+            $(parentSelector + " .message-box div").removeClass('alert-danger').addClass('alert-success').text('¡Mensaje enviado correctamente!');
         } else {
             $(parentSelector + " .message-box").removeClass('d-none').addClass('d-block ');
-            $(parentSelector + " .message-box div").removeClass('alert-success').addClass('alert-danger').text('Found error in the form. Please check again.');
+            $(parentSelector + " .message-box div").removeClass('alert-success').addClass('alert-danger').text('Hubo un error al mandar tu mensaje.');
         }
     }
 
 }); // JQuery end
+
+
+function submitForm(event){
+
+	event.preventDefault()
+	console.log('event :>> ', event);
+
+}
