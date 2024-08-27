@@ -134,7 +134,7 @@ jQuery(function ($) {
                 }
             });
         } else{
-            startCounting();
+            // startCounting();
         }
     }
 
@@ -382,9 +382,60 @@ jQuery(function ($) {
 }); // JQuery end
 
 
-function submitForm(event){
 
-	event.preventDefault()
-	console.log('event :>> ', event);
+let initialCount = 119000;
+let incrementPerDay = 421;
+let startHour = 6;  // 10 AM
+let endHour = 18;   // 6 PM
+let timezoneOffset = -6;  // UTC-6
 
+// Función para obtener la hora actual en UTC-6
+function getCurrentTimeUTC6() {
+		let now = new Date();
+		let utcHour = now.getUTCHours() + timezoneOffset;
+		if (utcHour < 0) utcHour += 24;
+		return {
+				hour: utcHour,
+				minute: now.getUTCMinutes(),
+				seconds: now.getUTCSeconds(),
+				day: now.getUTCDate(),
+				month: now.getUTCMonth(),
+				year: now.getUTCFullYear()
+		};
 }
+
+// Función para calcular el valor del contador
+function calculateCount() {
+		let startDate = new Date("2024-08-20T00:00:00Z"); // Fecha de inicio
+		let currentTime = getCurrentTimeUTC6();
+		
+		let currentDate = new Date(Date.UTC(currentTime.year, currentTime.month, currentTime.day));
+		let daysElapsed = Math.floor((currentDate - startDate) / (1000 * 60 * 60 * 24));
+		
+		let currentCount = initialCount + (daysElapsed * incrementPerDay);
+
+		// Verificar si está en el rango de 6 AM a 6 PM UTC-6
+		if (currentTime.hour >= startHour && currentTime.hour < endHour) {
+
+				let incrementPerHour = incrementPerDay / (endHour - startHour);
+				let fractionalHour = currentTime.hour - startHour + (currentTime.minute / 60) + (currentTime.seconds / 60 / 60)
+
+				currentCount += incrementPerHour * fractionalHour;
+		}
+
+		return Math.floor(currentCount);
+}
+
+// Función para actualizar el contador en la página
+function updateCounter() {
+	let counterElement = document.getElementById("counter");
+	let counter = calculateCount();
+	counter = counter.toLocaleString(undefined, {maximumFractionDigits:2})
+	counterElement.textContent = counter
+	// console.log('calculateCount() :>> ', calculateCount());
+	// setPedidosDespachados(calculateCount())
+}
+
+
+setInterval(updateCounter, 60000/6);
+updateCounter();
