@@ -380,7 +380,7 @@ jQuery(function ($) {
     }
 
 }); // JQuery end
-
+ 
 
 
 let initialCount = 119000;
