@@ -341,10 +341,9 @@ jQuery(function ($) {
 								const data = new FormData(event.target);
 
 								// Do a bit of work to convert the entries to a plain JS object
-								const value = Object.fromEntries(data.entries());
-							
-								console.log({ value });
-                // submitContactForm();
+								const values = Object.fromEntries(data.entries());
+
+                submitContactForm(values);
             }
         });
     }
@@ -364,7 +363,7 @@ jQuery(function ($) {
         $.ajax({
             type: "POST",
             url: "https://kroni3pl--development.gadget.app/sendMessage",
-            data: "name=" + name + "&email=" + email + "&phone=" + phone + "&company=" + company + "&message=" + message,
+            data: values,
             success : function(response){
                 if (response.ok ){
                     formSuccess();
