@@ -349,7 +349,7 @@ jQuery(function ($) {
     }
 
 
-    function submitContactForm(){
+    function submitContactForm(values){
 
 			
 
