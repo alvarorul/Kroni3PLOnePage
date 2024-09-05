@@ -330,25 +330,36 @@ jQuery(function ($) {
   // contact form
     if($("#contactForm").length) {
         $("#contactForm").validator().on("submit", function (event) {
+					
             if (event.isDefaultPrevented()) {
             // handle the invalid form...
                 submitMSG(false, '.contact-us');
             } else {
             // everything looks good!
                 event.preventDefault();
-                submitContactForm();
+
+								const data = new FormData(event.target);
+
+								// Do a bit of work to convert the entries to a plain JS object
+								const value = Object.fromEntries(data.entries());
+							
+								console.log({ value });
+                // submitContactForm();
             }
         });
     }
 
 
     function submitContactForm(){
+
+			
+
         // Initiate Variables With Form Content
-        var name    = $("#contactForm #name").val();
-        var email   = $("#contactForm #email").val();
-        var phone   = $("#contactForm #phone").val();
-        var company = $("#contactForm #company").val();
-        var message = $("#contactForm #message").val();
+        // var name    = $("#contactForm #name").val();
+        // var email   = $("#contactForm #email").val();
+        // var phone   = $("#contactForm #phone").val();
+        // var company = $("#contactForm #company").val();
+        // var message = $("#contactForm #message").val();
 
         $.ajax({
             type: "POST",
@@ -380,7 +391,7 @@ jQuery(function ($) {
     }
 
 }); // JQuery end
- 
+
 
 
 let initialCount = 119000;
