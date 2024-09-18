@@ -446,6 +446,8 @@ function updateCounter() {
 	// setPedidosDespachados(calculateCount())
 }
 
-
+setTimeout(() => {
+	updateCounter()
+}, 100);
 setInterval(updateCounter, 60000/6);
-updateCounter();
+// updateCounter();
