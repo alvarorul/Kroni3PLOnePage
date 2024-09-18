@@ -2137,7 +2137,7 @@ span.sub-title{
     border-right: none;
     margin-right: 0 !important;
 }
-.single-counter span{
+.single-counters span{
     font-weight: bold;
     font-family: 'Filson Pro Regular', sans-serif;
     color: var(--kroni-purple);
