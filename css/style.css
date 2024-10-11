@@ -3380,3 +3380,29 @@ button, [type="button"], [type="reset"], [type="submit"] {
         transform: translateX(0) translateY(5px)
     }
 }
+
+
+.whatsapp-float {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 100;
+	background-color: #25d366;
+	color: #fff;
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.whatsapp-icon {
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	border-radius: 50%;
+}
+
+.whatsapp-float:hover {
+	background-color: #128c7e;
+}
